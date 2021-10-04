@@ -15,15 +15,9 @@ class MyCell: UITableViewCell {
     
     
     func update(with image: Data) {
-//        преобразование стринги в имейдж
+        
+//    преобразовываем дату в картинку и записываем в картинку в ячейке
         
         imageCell.image = UIImage(data: image)
-        
-
-////
-//        image.stringToImage({ (value) in
-//            self.imageCell.image = value
-//        })
-//        }
-}
+    }
 }

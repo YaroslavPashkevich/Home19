@@ -19,10 +19,13 @@
 		C43DCCF327006D03008E6D2A /* TwoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DCCF027006D03008E6D2A /* TwoPresenter.swift */; };
 		C43DCCF427006D03008E6D2A /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DCCF127006D03008E6D2A /* TwoViewController.swift */; };
 		C43DCCF627006D2A008E6D2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DCCF527006D2A008E6D2A /* Constants.swift */; };
+		C4CE3A862709A6E60087F616 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CE3A852709A6E60087F616 /* CoreDataService.swift */; };
+		C4CE3ABE2709B3790087F616 /* Home19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4CE3ABC2709B3790087F616 /* Home19.xcdatamodeld */; };
 		C4FA803727020B7C007D3115 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA803627020B7C007D3115 /* MyCell.xib */; };
 		C4FA803A27020B9C007D3115 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA803927020B9C007D3115 /* MyCell.swift */; };
 		C4FA803D27021838007D3115 /* Image + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA803C27021838007D3115 /* Image + ext.swift */; };
 		C4FA808827023E86007D3115 /* String + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA808727023E86007D3115 /* String + ext.swift */; };
+		C4FC99BE270A396400634BB7 /* ImageGalery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FC99BC270A396400634BB7 /* ImageGalery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +43,13 @@
 		C43DCCF027006D03008E6D2A /* TwoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPresenter.swift; sourceTree = "<group>"; };
 		C43DCCF127006D03008E6D2A /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		C43DCCF527006D2A008E6D2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4CE3A852709A6E60087F616 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		C4CE3ABD2709B3790087F616 /* Home19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Home19.xcdatamodel; sourceTree = "<group>"; };
 		C4FA803627020B7C007D3115 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		C4FA803927020B9C007D3115 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		C4FA803C27021838007D3115 /* Image + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image + ext.swift"; sourceTree = "<group>"; };
 		C4FA808727023E86007D3115 /* String + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + ext.swift"; sourceTree = "<group>"; };
+		C4FC99BC270A396400634BB7 /* ImageGalery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalery.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +82,16 @@
 		C43DCCCC270068F6008E6D2A /* HOME19 */ = {
 			isa = PBXGroup;
 			children = (
-				C43DCCCD270068F6008E6D2A /* AppDelegate.swift */,
-				C43DCCCF270068F6008E6D2A /* SceneDelegate.swift */,
-				C43DCCF527006D2A008E6D2A /* Constants.swift */,
+				C4FC99BC270A396400634BB7 /* ImageGalery.swift */,
 				C43DCCE127006943008E6D2A /* oneGroup */,
 				C43DCCEE27006CD4008E6D2A /* twoGroup */,
+				C43DCCCD270068F6008E6D2A /* AppDelegate.swift */,
+				C4CE3A872709A6EB0087F616 /* Service */,
+				C43DCCCF270068F6008E6D2A /* SceneDelegate.swift */,
+				C43DCCF527006D2A008E6D2A /* Constants.swift */,
 				C43DCCD6270068F8008E6D2A /* Assets.xcassets */,
 				C43DCCD8270068F8008E6D2A /* LaunchScreen.storyboard */,
+				C4CE3ABC2709B3790087F616 /* Home19.xcdatamodeld */,
 				C43DCCDB270068F8008E6D2A /* Info.plist */,
 				C43DCCD1270068F6008E6D2A /* ViewController.swift */,
 				C4FA803B27021794007D3115 /* Extension */,
@@ -109,6 +118,14 @@
 				C4FA803827020B86007D3115 /* New Group */,
 			);
 			path = twoGroup;
+			sourceTree = "<group>";
+		};
+		C4CE3A872709A6EB0087F616 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C4CE3A852709A6E60087F616 /* CoreDataService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C4FA803827020B86007D3115 /* New Group */ = {
@@ -203,11 +220,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CE3A862709A6E60087F616 /* CoreDataService.swift in Sources */,
+				C4CE3ABE2709B3790087F616 /* Home19.xcdatamodeld in Sources */,
 				C43DCCD2270068F6008E6D2A /* ViewController.swift in Sources */,
 				C43DCCED27006BBD008E6D2A /* OneViewController.swift in Sources */,
 				C43DCCCE270068F6008E6D2A /* AppDelegate.swift in Sources */,
 				C4FA803A27020B9C007D3115 /* MyCell.swift in Sources */,
 				C43DCCF327006D03008E6D2A /* TwoPresenter.swift in Sources */,
+				C4FC99BE270A396400634BB7 /* ImageGalery.swift in Sources */,
 				C43DCCF427006D03008E6D2A /* TwoViewController.swift in Sources */,
 				C4FA808827023E86007D3115 /* String + ext.swift in Sources */,
 				C43DCCD0270068F6008E6D2A /* SceneDelegate.swift in Sources */,
@@ -423,6 +443,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4CE3ABC2709B3790087F616 /* Home19.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4CE3ABD2709B3790087F616 /* Home19.xcdatamodel */,
+			);
+			currentVersion = C4CE3ABD2709B3790087F616 /* Home19.xcdatamodel */;
+			path = Home19.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C43DCCC2270068F5008E6D2A /* Project object */;
 }

@@ -12,9 +12,16 @@ import UIKit
 protocol TwoViewProtocol: AnyObject {
     
     func updateTableView()
+    
+    func removeCell(to indexPath: IndexPath)
 }
 
-class TwoViewController: UIViewController {
+class TwoViewController: UIViewController, TwoViewProtocol {
+    
+    func updateTableView() {
+        tableView.reloadData()
+    }
+    
     @IBOutlet weak var tableView:UITableView!
     
 	var presenter: TwoPresenterProtocol = TwoPresenter()
@@ -40,18 +47,31 @@ class TwoViewController: UIViewController {
         
        
     }
-}
-
-extension TwoViewController: TwoViewProtocol {
-    func updateTableView() {
-        tableView.reloadData()
+    
+//    функция удаляет ячейку
+    func removeCell(to indexPath:IndexPath) {
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
-    
-    
 }
 
 
 extension TwoViewController: UITableViewDelegate{
+//    удалить ячейку по свайпу
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let configuration = UISwipeActionsConfiguration(
+            actions: [
+            UIContextualAction(
+                style: .destructive,
+            title: "Delete",
+                handler: { _, _, _ in
+                    self.presenter.removeCell(for: indexPath)
+                  
+                }
+            )
+            ]
+        )
+        return configuration
+    }
     
 }
 
@@ -68,6 +88,9 @@ extension TwoViewController: UITableViewDataSource{
                 
     return cell
     }
+    
+    
+    
 }
 
 extension TwoViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -76,9 +99,13 @@ extension TwoViewController: UINavigationControllerDelegate, UIImagePickerContro
         guard let image = info[.editedImage] as? UIImage else {
             return
         }
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        guard let stringImage = image.pngData() else { return }
-        presenter.addImage(imageString: stringImage)
+//        сохраняет выбранную картинку в галлерею
+//       UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+
+//        преобразовали картинку в дату
+        guard let dataImage = image.pngData() else { return }
+//        добавили картинку в массив
+        presenter.addImage(imageData: dataImage)
         
        
     }
